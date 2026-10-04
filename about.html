@@ -1,46 +1,35 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://www.youtube-nocookie.com;">
   
-  <title>हमारे बारे में एवं नैतिक उसूल | Ethical CodeX</title>
-  <meta name="description" content="Ethical CodeX का मिशन, उसूल और विजन: भारत में प्रैक्टिकल और नैतिक साइबर सुरक्षा शिक्षा का प्रसार। शुद्ध रूप से वाइट-हैट और कानूनी दृष्टिकोण।">
+  <title>About &amp; Ethical Principles | Ethical CodeX</title>
+  <meta name="description" content="Our mission and code of ethics: providing accessible, high-quality, practical cybersecurity training strictly dedicated to defensive and lawful security research.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="हमारे बारे में | Ethical CodeX">
-  <meta property="og:description" content="Ethical CodeX का मिशन: नैतिक हैकिंग और साइबर सुरक्षा का सशक्तिकरण।">
+  <meta property="og:title" content="About &amp; Ethical Principles | Ethical CodeX">
+  <meta property="og:description" content="Dedicated to accessible, ethical, and defensive cybersecurity education.">
   <meta property="og:image" content="assets/logo.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="scroll-progress" aria-hidden="true"></div>
-
-  <aside class="top-status-bar" aria-label="System Status">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-      <span class="status-badge">
-        <span class="blink-dot" aria-hidden="true"></span>
-        ETHICALCODEX :: MANIFESTO & ETHICS
-      </span>
-      <span style="font-size: 0.72rem; color: var(--text-dim);">CODE_OF_CONDUCT: RFC_COMPLIANT</span>
-    </div>
-  </aside>
-
+  <!-- Navbar -->
   <header class="navbar" role="banner">
     <div class="container nav-container">
       <a href="index.html" class="brand-logo-link" aria-label="Ethical CodeX Home">
-        <img src="assets/logo.svg" alt="Ethical CodeX Shield Logo" class="brand-logo-img">
+        <img src="assets/logo.svg" alt="Ethical CodeX Logo" class="brand-logo-img">
       </a>
 
-      <button id="mobile-toggle" class="mobile-toggle" aria-label="नेविगेशन मेनू खोलें" aria-expanded="false">
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -48,11 +37,11 @@
 
       <nav aria-label="Main Navigation">
         <ul id="nav-links" class="nav-links">
-          <li><a href="index.html" class="nav-link">होम</a></li>
-          <li><a href="courses.html" class="nav-link">कोर्सेज</a></li>
-          <li><a href="links.html" class="nav-link">कम्युनिटी लिंक्स</a></li>
-          <li><a href="about.html" class="nav-link active">हमारे बारे में</a></li>
-          <li><a href="courses.html" class="nav-cta-btn"><span>⚡</span> फ्री कोर्स</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="links.html" class="nav-link">Community</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="courses.html" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Start Free Course</a></li>
         </ul>
       </nav>
     </div>
@@ -60,87 +49,83 @@
 
   <main class="container section">
     <div class="section-header reveal">
-      <span class="section-tag">WHO WE ARE & WHY WE EXIST</span>
-      <h1 class="section-title">हमारा मिशन और नैतिक संहिता</h1>
+      <span class="section-tag">Our Mission</span>
+      <h1 class="section-title">About Ethical CodeX</h1>
       <p class="section-subtitle">
-        "किसी सिस्टम को सुरक्षित वही कर सकता है जो जानता हो कि उसे तोड़ा कैसे जाता है।"
+        Empowering individuals worldwide with the technical knowledge to understand, defend, and secure modern digital infrastructure.
       </p>
     </div>
 
-    <div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem;">
-      <!-- Mission Card -->
-      <section class="card reveal" style="border-left: 5px solid var(--accent-teal);">
-        <h2 style="color: #fff; font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem;">
-          <span style="color: var(--accent-teal);">&gt;</span> हमारा प्राथमिक उद्देश्य (The Mission)
-        </h2>
-        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem;">
-          <strong>Ethical CodeX</strong> का जन्म एक सरल लेकिन शक्तिशाली विचार से हुआ: भारत और दुनिया भर के हिंदी/हिंग्लिश भाषी छात्रों तक साइबर सुरक्षा और एथिकल हैकिंग की उच्चतम गुणवत्ता वाली व्यावहारिक शिक्षा पहुँचाना, वह भी बिना किसी महँगे भुगतान या गेटकीपिंग के।
+    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem;">
+      <!-- Mission Overview -->
+      <section class="card reveal">
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Why We Exist</h2>
+        <p style="line-height: 1.7; margin-bottom: 1rem;">
+          Cybersecurity is one of the most critical skills of the modern digital age, yet much of the existing training is locked behind expensive paywalls or limited to dry, abstract theory.
         </p>
-        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
-          इंटरनेट पर साइबर सुरक्षा के अधिकांश संसाधन या तो अत्यधिक महंगे हैं या केवल सैद्धांतिक (थ्योरी) हैं। Ethical CodeX पर हम असली Linux टर्मिनल, पैकेट एनालिसिस और सुरक्षित वर्चुअल लैब्स के जरिए छात्रों को वास्तविक दुनिया की चुनौतियों के लिए तैयार करते हैं।
+        <p style="line-height: 1.7;">
+          Ethical CodeX was created to provide high-quality, practical, and structured training for anyone wanting to build a legitimate career in security. By teaching real networking mechanics, Linux system administration, and penetration testing methodologies, we bridge the gap between academic theory and real-world defense.
         </p>
       </section>
 
-      <!-- 4 Pillars of Ethics -->
-      <section class="card reveal" style="border-left: 5px solid var(--accent-amber);">
-        <h2 style="color: #fff; font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;">
-          <span style="color: var(--accent-amber);">&gt;</span> हमारे चार नैतिक स्तंभ (Code of Ethics)
-        </h2>
+      <!-- 4 Core Principles -->
+      <section class="card reveal">
+        <h2 style="font-size: 1.5rem; margin-bottom: 1.25rem;">Core Principles &amp; Code of Ethics</h2>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-          <div style="background: rgba(0, 0, 0, 0.3); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
-            <h3 style="color: var(--accent-teal); font-size: 1.1rem; margin-bottom: 0.4rem;">1. 100% कानूनी एवं अनुमति प्राप्त</h3>
-            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-              हम कभी भी किसी अनधिकृत सिस्टम को स्कैन या टेस्ट करने का समर्थन नहीं करते। हमारी हर लैब आपके अपने कंप्यूटर पर वर्चुअल मशीन या अनुमति प्राप्त प्रोग्राम्स में चलती है।
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+          <div style="padding: 1.25rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface);">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: var(--accent-teal);">1. Strictly Lawful &amp; Authorized</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+              We strictly advocate testing only on systems you own or have explicit written authorization to evaluate. Unapproved scanning or exploitation is illegal and unethical.
             </p>
           </div>
 
-          <div style="background: rgba(0, 0, 0, 0.3); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
-            <h3 style="color: var(--accent-green); font-size: 1.1rem; margin-bottom: 0.4rem;">2. रक्षात्मक दृष्टिकोण (Defense First)</h3>
-            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-              कमजोरी (Vulnerability) ढूँढना सिक्के का केवल एक पहलू है। हमारा असली लक्ष्य उस कमजोरी को ठीक करना (Patching) और पूरे डिजिटल बुनियादी ढांचे को मजबूत बनाना है।
+          <div style="padding: 1.25rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface);">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: var(--accent-teal);">2. Defense-First Mindset</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+              Understanding how attacks function is only half the picture. Our primary objective is to learn how vulnerabilities can be remediated, patched, and defended against.
             </p>
           </div>
 
-          <div style="background: rgba(0, 0, 0, 0.3); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
-            <h3 style="color: var(--accent-amber); font-size: 1.1rem; margin-bottom: 0.4rem;">3. जिम्मेदार प्रकटीकरण (Responsible Disclosure)</h3>
-            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-              यदि आपको कभी किसी सिस्टम में कोई बग या सुरक्षा खामी मिले, तो उसे सार्वजनिक करने या दुर्भावना से फायदा उठाने के बजाय सिस्टम के मालिक को गोपनीय रूप से रिपोर्ट करें।
+          <div style="padding: 1.25rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface);">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: var(--accent-teal);">3. Responsible Disclosure</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+              Security researchers who discover flaws should report them privately to system owners to allow time for remediation, rather than exploiting or weaponizing them.
             </p>
           </div>
 
-          <div style="background: rgba(0, 0, 0, 0.3); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
-            <h3 style="color: #ff6b81; font-size: 1.1rem; margin-bottom: 0.4rem;">4. शून्य मैलवेयर / पेलोड नीति</h3>
-            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
-              यह प्लेटफॉर्म केवल शिक्षा, शोध और करियर निर्माण के लिए है। यहाँ किसी भी प्रकार का रैनसमवेयर, ट्रोजन, वायरस या हानिकारक कोड नहीं सिखाया जाता।
+          <div style="padding: 1.25rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-surface);">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.35rem; color: var(--accent-teal);">4. Zero Malware Policy</h3>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+              This platform does not create or distribute malware, ransomware, or malicious payloads. All examples are designed purely for educational analysis in controlled labs.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Black Hat vs White Hat Comparison -->
+      <!-- White Hat vs Black Hat -->
       <section class="card reveal">
-        <h2 style="color: #fff; font-size: 1.5rem; margin-bottom: 1rem;">
-          सफेद टोपी (White Hat) बनाम काली टोपी (Black Hat)
-        </h2>
-        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.2rem;">
-          तकनीकी ज्ञान दोनों के पास एक जैसा होता है। अंतर सिर्फ <strong>नियत (Intent)</strong> और <strong>अनुमति (Permission)</strong> का होता है।
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">White Hat vs. Black Hat</h2>
+        <p style="line-height: 1.7; margin-bottom: 1.25rem;">
+          The technical skills required to evaluate a network are identical on both sides. The only difference is <strong>permission</strong> and <strong>intent</strong>:
         </p>
+
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div style="background: rgba(0, 255, 136, 0.05); border: 1px solid var(--accent-green); padding: 1.2rem; border-radius: var(--radius-sm);">
-            <h4 style="color: var(--accent-green); font-size: 1.05rem; margin-bottom: 0.4rem;">White Hat (एथिकल हैकर)</h4>
-            <ul style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem;">
-              <li>कंपनी की लिखित अनुमति से काम करता है</li>
-              <li>कमजोरी खोजकर उसे ठीक करने में मदद करता है</li>
-              <li>सम्मान, कानूनी करियर और उच्च वेतन पाता है</li>
+          <div style="padding: 1.25rem; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-md);">
+            <h3 style="font-size: 1.05rem; color: #166534; margin-bottom: 0.5rem;">White Hat (Ethical Hacker)</h3>
+            <ul style="font-size: 0.9rem; color: #15803d; line-height: 1.6; padding-left: 1.25rem;">
+              <li>Operates with written legal permission</li>
+              <li>Discloses weaknesses to help teams patch them</li>
+              <li>Builds a respectable, well-compensated career</li>
             </ul>
           </div>
-          <div style="background: rgba(255, 71, 87, 0.05); border: 1px solid #ff4757; padding: 1.2rem; border-radius: var(--radius-sm);">
-            <h4 style="color: #ff4757; font-size: 1.05rem; margin-bottom: 0.4rem;">Black Hat (साइबर अपराधी)</h4>
-            <ul style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; padding-left: 1.2rem;">
-              <li>बिना अनुमति दूसरों के सिस्टम में घुसता है</li>
-              <li>डेटा चोरी, जबरन वसूली या नुकसान पहुँचाता है</li>
-              <li>कानूनी सजा और जेल का सामना करता है</li>
+
+          <div style="padding: 1.25rem; background-color: #fef2f2; border: 1px solid #fecaca; border-radius: var(--radius-md);">
+            <h3 style="font-size: 1.05rem; color: #991b1b; margin-bottom: 0.5rem;">Black Hat (Malicious Actor)</h3>
+            <ul style="font-size: 0.9rem; color: #b91c1c; line-height: 1.6; padding-left: 1.25rem;">
+              <li>Breaches systems without authorization</li>
+              <li>Damages systems or steals private data</li>
+              <li>Faces criminal prosecution and legal penalties</li>
             </ul>
           </div>
         </div>
@@ -148,20 +133,21 @@
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-disclaimer">
-        ⚠️ <strong>कानूनी डिस्क्लेमर:</strong> सिर्फ शिक्षा के लिए। प्रैक्टिस सिर्फ अपनी लैब या अनुमति वाले सिस्टम पर करें। किसी भी अनधिकृत गतिविधि के लिए उपयोगकर्ता स्वयं जिम्मेदार होगा।
+        For educational purposes only. Practice only on your own lab or systems you have permission to test.
       </div>
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 <strong>Ethical CodeX</strong>. सर्वाधिकार सुरक्षित।
+          &copy; 2026 Ethical CodeX. All rights reserved.
         </div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="about.html">नैतिक नीति</a>
-          <a href="courses.html">कोर्सेज</a>
-          <a href="links.html">संपर्क</a>
+          <a href="about.html">About &amp; Ethics</a>
+          <a href="courses.html">Courses</a>
+          <a href="links.html">Community</a>
         </div>
       </div>
     </div>

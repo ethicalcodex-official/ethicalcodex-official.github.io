@@ -1,46 +1,35 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://www.youtube-nocookie.com;">
   
-  <title>Ep 05: Ports & Protocols Deep Dive | Ethical CodeX</title>
-  <meta name="description" content="Hinglish में समझें पोर्ट्स क्या होते हैं: वेल-नोन पोर्ट्स (21, 22, 53, 80, 443, 3306), Netcat nc -zv से पोर्ट चेकिंग और सर्विस बैनर ग्रैबिंग।">
+  <title>Ep 05: Ports &amp; Protocols Deep Dive | Ethical CodeX</title>
+  <meta name="description" content="Understand network ports, well-known port numbers (21, 22, 53, 80, 443, 3306), probing open ports with Netcat, and banner grabbing fundamentals.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Ep 05: Ports & Protocols | Ethical CodeX">
-  <meta property="og:description" content="Common network ports, Netcat commands, and banner grabbing for ethical hackers in Hinglish.">
+  <meta property="og:title" content="Ep 05: Ports &amp; Protocols | Ethical CodeX">
+  <meta property="og:description" content="Common ports, Netcat commands, and banner grabbing for security analysts.">
   <meta property="og:image" content="../assets/logo.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-  <div id="scroll-progress" aria-hidden="true"></div>
-
-  <aside class="top-status-bar" aria-label="System Status">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-      <span class="status-badge">
-        <span class="blink-dot" aria-hidden="true"></span>
-        ETHICALCODEX :: MODULE_1 :: EPISODE_05
-      </span>
-      <span style="font-size: 0.72rem; color: var(--text-dim);">TOPIC: PORTS_&_BANNER_GRABBING</span>
-    </div>
-  </aside>
-
+  <!-- Navbar -->
   <header class="navbar" role="banner">
     <div class="container nav-container">
       <a href="../index.html" class="brand-logo-link" aria-label="Ethical CodeX Home">
-        <img src="../assets/logo.svg" alt="Ethical CodeX Shield Logo" class="brand-logo-img">
+        <img src="../assets/logo.svg" alt="Ethical CodeX Logo" class="brand-logo-img">
       </a>
 
-      <button id="mobile-toggle" class="mobile-toggle" aria-label="नेविगेशन मेनू खोलें" aria-expanded="false">
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -48,140 +37,138 @@
 
       <nav aria-label="Main Navigation">
         <ul id="nav-links" class="nav-links">
-          <li><a href="../index.html" class="nav-link">होम</a></li>
-          <li><a href="../courses.html" class="nav-link active">कोर्सेज</a></li>
-          <li><a href="../links.html" class="nav-link">कम्युनिटी लिंक्स</a></li>
-          <li><a href="../about.html" class="nav-link">हमारे बारे में</a></li>
-          <li><a href="../courses.html" class="nav-cta-btn">&larr; सभी मॉड्यूल्स</a></li>
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../courses.html" class="nav-link active">Courses</a></li>
+          <li><a href="../links.html" class="nav-link">Community</a></li>
+          <li><a href="../about.html" class="nav-link">About</a></li>
+          <li><a href="../courses.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.88rem;">&larr; All Courses</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="container section" style="padding-top: 2.5rem;">
-    <div style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;">
-      <a href="../courses.html" style="color: var(--accent-teal);">कोर्सेज</a> &gt; 
-      <span style="color: var(--text-muted);">मॉड्यूल 1: नेटवर्किंग</span> &gt; 
-      <span style="color: #fff;">एपिसोड 05</span>
+    <!-- Breadcrumb -->
+    <div style="font-size: 0.88rem; color: var(--text-light); margin-bottom: 1.25rem;">
+      <a href="../courses.html">Courses</a> &gt; 
+      <span>Module 1: Networking</span> &gt; 
+      <span style="color: var(--text-main); font-weight: 500;">Episode 05</span>
     </div>
 
     <div class="reveal">
-      <span class="module-badge badge-active">MODULE 1 • EPISODE 05</span>
-      <h1 class="section-title" style="margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: left;">
-        Ports & Protocols की दुनिया: डिजिटल दरवाजे
+      <span class="status-badge badge-available">Module 1 • Episode 05</span>
+      <h1 class="section-title" style="text-align: left; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+        Ports &amp; Protocols: Digital Gateways
       </h1>
       <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem;">
-        कंप्यूटर में 65,535 दरवाजे होते हैं! जानिए कौन सा दरवाजा किस सर्विस के लिए खुलता है और नेटकैट (Netcat) से बैनर ग्रैबिंग कैसे की जाती है।
+        Every networked operating system has up to 65,535 logical ports. Learn the standard port allocations, how to check open ports with Netcat, and how banner grabbing reveals service software versions.
       </p>
     </div>
 
     <div class="episode-layout">
+      <!-- Main Content -->
       <article>
+        <!-- YouTube Embed Wrapper -->
         <div class="video-player-wrapper reveal">
-          <!-- EDITABLE: Replace VIDEO_ID_HERE with actual YouTube Video ID -->
           <iframe 
             src="https://www.youtube-nocookie.com/embed/VIDEO_ID_HERE" 
-            title="Ports and Protocols in Hinglish | Ethical CodeX" 
+            title="Ports and Protocols Deep Dive | Ethical CodeX" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen>
           </iframe>
         </div>
 
-        <div style="background: rgba(0, 229, 199, 0.05); border: 1px dashed var(--border-color); border-radius: var(--radius-sm); padding: 0.9rem 1.2rem; margin-bottom: 2rem; font-family: var(--font-code); font-size: 0.82rem; color: var(--accent-teal);">
-          💡 <strong>नियम:</strong> एक एथिकल हैकर कभी पूरे नेटवर्क पर अंधी फायरिंग नहीं करता। सबसे पहले वह देखता है कि कौन से पोर्ट्स ओपन हैं और उन पर कौन सा सॉफ्टवेयर वर्जन चल रहा है।
-        </div>
-
+        <!-- Notes Section -->
         <section class="reveal">
-          <h2 style="font-family: var(--font-heading); color: #fff; font-size: 1.6rem; margin-bottom: 1rem;">
-            1. पोर्ट्स की श्रेणियां और महत्वपूर्ण पोर्ट नंबर
-          </h2>
-          <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1.2rem;">
-            कुल 0 से 65535 तक पोर्ट्स होते हैं:
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">1. Port Categories &amp; Standard Allocations</h2>
+          <p style="line-height: 1.7; margin-bottom: 1rem;">
+            Port numbers are 16-bit integers ranging from 0 to 65,535, divided into three standard tiers:
           </p>
-          <ul style="color: var(--text-muted); margin-left: 1.5rem; line-height: 1.8; margin-bottom: 1.5rem;">
-            <li><strong>0 – 1023:</strong> Well-Known Ports (सिस्टम और मानक सर्विसेज के लिए आरक्षित)</li>
-            <li><strong>1024 – 49151:</strong> Registered Ports (कंपनियों और डेटाबेस के लिए)</li>
-            <li><strong>49152 – 65535:</strong> Dynamic / Ephemeral Ports (अस्थाई कनेक्शन के लिए)</li>
+          <ul style="margin-left: 1.5rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.5rem;">
+            <li><strong>0 – 1023: Well-Known Ports:</strong> Reserved for core operating system services and ubiquitous internet protocols (such as SSH, HTTP, and DNS).</li>
+            <li><strong>1024 – 49151: Registered Ports:</strong> Assigned by IANA for specific vendor applications and databases (such as MySQL on 3306 or PostgreSQL on 5432).</li>
+            <li><strong>49152 – 65535: Dynamic / Ephemeral Ports:</strong> Temporary ports assigned dynamically by your operating system client for outgoing communication.</li>
           </ul>
 
           <div style="overflow-x: auto; margin-bottom: 2rem;">
-            <table style="width: 100%; border-collapse: collapse; font-family: var(--font-code); font-size: 0.88rem; background: var(--bg-card); border-radius: var(--radius-sm); overflow: hidden;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden;">
               <thead>
-                <tr style="background: rgba(0, 229, 199, 0.1); color: var(--accent-teal); text-align: left;">
-                  <th style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-color);">पोर्ट</th>
-                  <th style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-color);">प्रोटोकॉल</th>
-                  <th style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-color);">सेवा (Service)</th>
-                  <th style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-color);">सुरक्षा पहलू</th>
+                <tr style="background: var(--bg-surface); text-align: left; border-bottom: 1px solid var(--border-color);">
+                  <th style="padding: 0.75rem 1rem;">Port</th>
+                  <th style="padding: 0.75rem 1rem;">Protocol</th>
+                  <th style="padding: 0.75rem 1rem;">Service</th>
+                  <th style="padding: 0.75rem 1rem;">Security Significance</th>
                 </tr>
               </thead>
               <tbody>
-                <tr style="border-bottom: 1px solid var(--border-light);">
-                  <td style="padding: 0.75rem 1rem; color: #fff;">21</td>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: 0.75rem 1rem; font-weight: 600;">21</td>
                   <td style="padding: 0.75rem 1rem;">TCP</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-amber);">FTP</td>
-                  <td style="padding: 0.75rem 1rem; color: #ff6b6b;">असुरक्षित (Cleartext Password)</td>
+                  <td style="padding: 0.75rem 1rem;">FTP</td>
+                  <td style="padding: 0.75rem 1rem; color: #dc2626;">Transmits authentication credentials in plaintext</td>
                 </tr>
-                <tr style="border-bottom: 1px solid var(--border-light);">
-                  <td style="padding: 0.75rem 1rem; color: #fff;">22</td>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: 0.75rem 1rem; font-weight: 600;">22</td>
                   <td style="padding: 0.75rem 1rem;">TCP</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-green);">SSH</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-green);">सुरक्षित एन्क्रिप्टेड टर्मिनल</td>
+                  <td style="padding: 0.75rem 1rem;">SSH</td>
+                  <td style="padding: 0.75rem 1rem; color: #16a34a;">Encrypted remote terminal shell session</td>
                 </tr>
-                <tr style="border-bottom: 1px solid var(--border-light);">
-                  <td style="padding: 0.75rem 1rem; color: #fff;">23</td>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: 0.75rem 1rem; font-weight: 600;">23</td>
                   <td style="padding: 0.75rem 1rem;">TCP</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-amber);">Telnet</td>
-                  <td style="padding: 0.75rem 1rem; color: #ff6b6b;">असुरक्षित (कोई एन्क्रिप्शन नहीं)</td>
+                  <td style="padding: 0.75rem 1rem;">Telnet</td>
+                  <td style="padding: 0.75rem 1rem; color: #dc2626;">Legacy unencrypted terminal communication</td>
                 </tr>
-                <tr style="border-bottom: 1px solid var(--border-light);">
-                  <td style="padding: 0.75rem 1rem; color: #fff;">53</td>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: 0.75rem 1rem; font-weight: 600;">53</td>
                   <td style="padding: 0.75rem 1rem;">UDP/TCP</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-teal);">DNS</td>
-                  <td style="padding: 0.75rem 1rem;">क्वेरी UDP, जोन ट्रांसफर TCP</td>
+                  <td style="padding: 0.75rem 1rem;">DNS</td>
+                  <td style="padding: 0.75rem 1rem;">Standard queries use UDP; large zone transfers use TCP</td>
                 </tr>
-                <tr style="border-bottom: 1px solid var(--border-light);">
-                  <td style="padding: 0.75rem 1rem; color: #fff;">80</td>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: 0.75rem 1rem; font-weight: 600;">80</td>
                   <td style="padding: 0.75rem 1rem;">TCP</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-amber);">HTTP</td>
-                  <td style="padding: 0.75rem 1rem; color: #ff6b6b;">असुरक्षित वेब ट्रैफिक</td>
+                  <td style="padding: 0.75rem 1rem;">HTTP</td>
+                  <td style="padding: 0.75rem 1rem; color: #dc2626;">Unencrypted plaintext web traffic</td>
                 </tr>
-                <tr style="border-bottom: 1px solid var(--border-light);">
-                  <td style="padding: 0.75rem 1rem; color: #fff;">443</td>
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                  <td style="padding: 0.75rem 1rem; font-weight: 600;">443</td>
                   <td style="padding: 0.75rem 1rem;">TCP</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-green);">HTTPS</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-green);">TLS/SSL एन्क्रिप्टेड वेब</td>
+                  <td style="padding: 0.75rem 1rem;">HTTPS</td>
+                  <td style="padding: 0.75rem 1rem; color: #16a34a;">TLS/SSL encrypted secure web traffic</td>
                 </tr>
                 <tr>
-                  <td style="padding: 0.75rem 1rem; color: #fff;">3306</td>
+                  <td style="padding: 0.75rem 1rem; font-weight: 600;">3306</td>
                   <td style="padding: 0.75rem 1rem;">TCP</td>
                   <td style="padding: 0.75rem 1rem;">MySQL</td>
-                  <td style="padding: 0.75rem 1rem; color: var(--accent-amber);">डेटाबेस सर्विस पोर्ट</td>
+                  <td style="padding: 0.75rem 1rem;">Database service port; should never be exposed publicly</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
 
-        <!-- Practical Linux Commands -->
-        <section class="reveal">
-          <h2 style="font-family: var(--font-heading); color: #fff; font-size: 1.6rem; margin-bottom: 1rem;">
-            2. व्यावहारिक Netcat पोर्ट प्रोबिंग
-          </h2>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span>BASH - Netcat (nc) से सिंगल पोर्ट खुला है या नहीं जाँचना</span>
-              <button class="code-copy-btn">Copy</button>
-            </div>
-            <pre class="code-body"><code>nc -zv 127.0.0.1 22</code></pre>
-          </div>
-          <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1rem;">
-            * <code>-z</code> = जीरो I/O मोड (सिर्फ पोर्ट चेक, डेटा नहीं भेजता), <code>-v</code> = वर्बोस आउटपुट।
+        <!-- Linux Commands Section -->
+        <section class="reveal" style="margin-top: 2rem;">
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">2. Netcat (nc) Port Probing &amp; Banner Grabbing</h2>
+          <p style="margin-bottom: 1.25rem;">
+            Netcat is known as the "Swiss Army knife" of networking. Use it to check if a specific port is accepting connections:
           </p>
 
           <div class="code-block">
             <div class="code-header">
-              <span>BASH - पोर्ट रेंज को स्कैन करना</span>
+              <span>BASH &mdash; Check if port 22 is open on localhost</span>
+              <button class="code-copy-btn">Copy</button>
+            </div>
+            <pre class="code-body"><code>nc -zv 127.0.0.1 22</code></pre>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 1rem;">
+            * Flags: <code>-z</code> sets zero-I/O mode (scans without sending payload data), and <code>-v</code> enables verbose output.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span>BASH &mdash; Probe a specific port range (20 through 80)</span>
               <button class="code-copy-btn">Copy</button>
             </div>
             <pre class="code-body"><code>nc -zv 127.0.0.1 20-80</code></pre>
@@ -189,78 +176,81 @@
 
           <div class="code-block">
             <div class="code-header">
-              <span>BASH - वेब सर्वर का बैनर (Header) ग्रैब करना</span>
+              <span>BASH &mdash; Perform HTTP banner grabbing using curl</span>
               <button class="code-copy-btn">Copy</button>
             </div>
             <pre class="code-body"><code>curl -I https://google.com</code></pre>
           </div>
         </section>
 
+        <!-- Episode Navigation -->
         <div class="episode-nav reveal">
           <a href="ep4.html" class="btn btn-secondary">
-            &larr; पिछला: Ep 04 (DNS Recon)
+            &larr; Previous: Ep 04 (DNS Recon)
           </a>
-          <a href="../courses.html" class="btn btn-primary" style="background: var(--accent-green); color: #000; border-color: var(--accent-green);">
-            🎉 मॉड्यूल 1 पूरा! कोर्सेज देखें &rarr;
+          <a href="../courses.html" class="btn btn-primary">
+            Completed Module 1 &rarr; Back to Courses
           </a>
         </div>
       </article>
 
+      <!-- Sidebar: Checklist -->
       <aside>
         <div class="checklist-card reveal" id="episode-checklist" data-episode="ep5">
           <div class="checklist-title">
-            <span style="color: #fff;">सीखा क्या?</span>
-            <span class="progress-counter" id="checklist-count">0/5 Done</span>
+            <span>What You Learned</span>
+            <span class="checklist-counter" id="checklist-count">0/5 Done</span>
           </div>
-          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.2rem;">
-            चेकबॉक्स टिक करें। मॉड्यूल 1 पूरा करें:
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Check off each topic to finish Module 1:
           </p>
 
           <ul class="checklist-items">
             <li class="check-item">
               <input type="checkbox" id="chk5_1">
-              <label for="chk5_1">पोर्ट नंबर की अवधारणा और कुल 65535 पोर्ट्स समझे</label>
+              <label for="chk5_1">Understand the concept of 65,535 logical ports</label>
             </li>
             <li class="check-item">
               <input type="checkbox" id="chk5_2">
-              <label for="chk5_2">टॉप वेल-नोन पोर्ट्स (21, 22, 53, 80, 443) याद किए</label>
+              <label for="chk5_2">Memorize key well-known ports (21, 22, 53, 80, 443)</label>
             </li>
             <li class="check-item">
               <input type="checkbox" id="chk5_3">
-              <label for="chk5_3">Cleartext (HTTP/Telnet) vs Encrypted (HTTPS/SSH) का खतरा समझा</label>
+              <label for="chk5_3">Recognize plaintext risks (FTP/Telnet) vs TLS/SSH</label>
             </li>
             <li class="check-item">
               <input type="checkbox" id="chk5_4">
-              <label for="chk5_4"><code>nc -zv</code> से लोकल पोर्ट टेस्ट किया</label>
+              <label for="chk5_4">Probe port status with Netcat (<code>nc -zv</code>)</label>
             </li>
             <li class="check-item">
               <input type="checkbox" id="chk5_5">
-              <label for="chk5_5">बैनर ग्रैबिंग का उद्देश्य जाना</label>
+              <label for="chk5_5">Inspect service headers with banner grabbing</label>
             </li>
           </ul>
 
-          <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(0, 255, 136, 0.1); border: 1px solid var(--accent-green); border-radius: var(--radius-sm); font-size: 0.82rem; color: var(--accent-green); text-align: center;">
-            🏆 <strong>बधाई!</strong> मॉड्यूल 1 के सभी 5 एपिसोड्स पूरे हुए।
+          <div style="margin-top: 1.25rem; padding: 0.85rem; background-color: var(--accent-teal-light); border: 1px solid var(--accent-teal); border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--accent-teal); text-align: center; font-weight: 500;">
+            Congratulations! You have completed Module 1.
           </div>
         </div>
       </aside>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-disclaimer">
-        ⚠️ <strong>कानूनी डिस्क्लेमर:</strong> सिर्फ शिक्षा के लिए। प्रैक्टिस सिर्फ अपनी लैब या अनुमति वाले सिस्टम पर करें। किसी भी अनधिकृत गतिविधि के लिए उपयोगकर्ता स्वयं जिम्मेदार होगा।
+        For educational purposes only. Practice only on your own lab or systems you have permission to test.
       </div>
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 <strong>Ethical CodeX</strong>. सर्वाधिकार सुरक्षित।
+          &copy; 2026 Ethical CodeX. All rights reserved.
         </div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="../about.html">नैतिक नीति</a>
-          <a href="../courses.html">कोर्सेज</a>
-          <a href="../links.html">संपर्क</a>
+          <a href="../about.html">About &amp; Ethics</a>
+          <a href="../courses.html">Courses</a>
+          <a href="../links.html">Community</a>
         </div>
       </div>
     </div>

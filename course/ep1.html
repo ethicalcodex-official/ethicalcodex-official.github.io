@@ -1,46 +1,35 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://www.youtube-nocookie.com;">
   
-  <title>Ep 01: IP Address & Subnetting Basics | Ethical CodeX</title>
-  <meta name="description" content="Hinglish में सीखें IP Address क्या होता है, IPv4 vs IPv6, Public vs Private IP और Subnetting के फंडामेंटल्स। साथ में लिनक्स कमांड्स।">
+  <title>Ep 01: IP Addresses &amp; Subnetting Basics | Ethical CodeX</title>
+  <meta name="description" content="Learn what IP addresses are, IPv4 versus IPv6, public versus private IP ranges, subnetting basics, and essential Linux networking commands.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Ep 01: IP Address & Subnetting | Ethical CodeX">
-  <meta property="og:description" content="Hinglish Ethical Hacking Course Episode 1. IP Addresses, Subnetting, and Linux CLI commands.">
+  <meta property="og:title" content="Ep 01: IP Addresses &amp; Subnetting | Ethical CodeX">
+  <meta property="og:description" content="Core networking fundamentals for ethical hackers: IP addressing, subnet masks, and Linux CLI commands.">
   <meta property="og:image" content="../assets/logo.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
-  <div id="scroll-progress" aria-hidden="true"></div>
-
-  <aside class="top-status-bar" aria-label="System Status">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-      <span class="status-badge">
-        <span class="blink-dot" aria-hidden="true"></span>
-        ETHICALCODEX :: MODULE_1 :: EPISODE_01
-      </span>
-      <span style="font-size: 0.72rem; color: var(--text-dim);">TOPIC: IP_ADDRESSING & SUBSETS</span>
-    </div>
-  </aside>
-
+  <!-- Navbar -->
   <header class="navbar" role="banner">
     <div class="container nav-container">
       <a href="../index.html" class="brand-logo-link" aria-label="Ethical CodeX Home">
-        <img src="../assets/logo.svg" alt="Ethical CodeX Shield Logo" class="brand-logo-img">
+        <img src="../assets/logo.svg" alt="Ethical CodeX Logo" class="brand-logo-img">
       </a>
 
-      <button id="mobile-toggle" class="mobile-toggle" aria-label="नेविगेशन मेनू खोलें" aria-expanded="false">
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -48,11 +37,11 @@
 
       <nav aria-label="Main Navigation">
         <ul id="nav-links" class="nav-links">
-          <li><a href="../index.html" class="nav-link">होम</a></li>
-          <li><a href="../courses.html" class="nav-link active">कोर्सेज</a></li>
-          <li><a href="../links.html" class="nav-link">कम्युनिटी लिंक्स</a></li>
-          <li><a href="../about.html" class="nav-link">हमारे बारे में</a></li>
-          <li><a href="../courses.html" class="nav-cta-btn">&larr; सभी मॉड्यूल्स</a></li>
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../courses.html" class="nav-link active">Courses</a></li>
+          <li><a href="../links.html" class="nav-link">Community</a></li>
+          <li><a href="../about.html" class="nav-link">About</a></li>
+          <li><a href="../courses.html" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.88rem;">&larr; All Courses</a></li>
         </ul>
       </nav>
     </div>
@@ -60,20 +49,19 @@
 
   <main class="container section" style="padding-top: 2.5rem;">
     <!-- Breadcrumb -->
-    <div style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem;">
-      <a href="../courses.html" style="color: var(--accent-teal);">कोर्सेज</a> &gt; 
-      <span style="color: var(--text-muted);">मॉड्यूल 1: नेटवर्किंग</span> &gt; 
-      <span style="color: #fff;">एपिसोड 01</span>
+    <div style="font-size: 0.88rem; color: var(--text-light); margin-bottom: 1.25rem;">
+      <a href="../courses.html">Courses</a> &gt; 
+      <span>Module 1: Networking</span> &gt; 
+      <span style="color: var(--text-main); font-weight: 500;">Episode 01</span>
     </div>
 
-    <!-- Episode Heading -->
     <div class="reveal">
-      <span class="module-badge badge-active">MODULE 1 • EPISODE 01</span>
-      <h1 class="section-title" style="margin-top: 0.5rem; margin-bottom: 0.5rem; text-align: left;">
-        IP Addresses, Classes & Subnetting Fundamentals
+      <span class="status-badge badge-available">Module 1 • Episode 01</span>
+      <h1 class="section-title" style="text-align: left; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+        IP Addresses, Classes &amp; Subnetting Fundamentals
       </h1>
       <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 2rem;">
-        हर इंटरनेट डिवाइस की पहचान: समझें IPv4, IPv6, Public vs Private IP और अपने लिनक्स टर्मिनल पर IP कॉन्फ़िगरेशन चेक करना।
+        Every device connected to a computer network needs an identifier. Understand IPv4, IPv6, private vs. public IP ranges, and how to inspect network interfaces in Linux.
       </p>
     </div>
 
@@ -82,73 +70,64 @@
       <article>
         <!-- YouTube Embed Wrapper -->
         <div class="video-player-wrapper reveal">
-          <!-- EDITABLE: Replace VIDEO_ID_HERE with actual YouTube Video ID -->
           <iframe 
             src="https://www.youtube-nocookie.com/embed/VIDEO_ID_HERE" 
-            title="IP Address and Subnetting in Hinglish | Ethical CodeX" 
+            title="IP Addresses and Subnetting | Ethical CodeX" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowfullscreen>
           </iframe>
         </div>
 
-        <!-- Quick Video Note -->
-        <div style="background: rgba(0, 229, 199, 0.05); border: 1px dashed var(--border-color); border-radius: var(--radius-sm); padding: 0.9rem 1.2rem; margin-bottom: 2rem; font-family: var(--font-code); font-size: 0.82rem; color: var(--accent-teal);">
-          💡 <strong>टिप:</strong> वीडियो देखने के साथ-साथ नीचे दी गई लिनक्स कमांड्स को अपने Kali Linux टर्मिनल पर चलाकर स्वयं देखें!
-        </div>
-
-        <!-- Episode Theory & Hinglish Notes -->
+        <!-- Notes Section -->
         <section class="reveal">
-          <h2 style="font-family: var(--font-heading); color: #fff; font-size: 1.6rem; margin-bottom: 1rem;">
-            1. IP Address क्या है और यह क्यों जरूरी है?
-          </h2>
-          <p style="color: var(--text-muted); margin-bottom: 1rem; line-height: 1.8;">
-            जैसे वास्तविक दुनिया में डाक पहुँचाने के लिए हर घर का एक भौतिक पता (Address) होता है, ठीक उसी तरह डिजिटल दुनिया में नेटवर्क से जुड़े हर उपकरण (Computer, Server, Mobile, Router) को एक अद्वितीय तार्किक पहचान (Logical Identifier) दी जाती है, जिसे <strong>IP (Internet Protocol) Address</strong> कहते हैं।
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">1. What is an IP Address?</h2>
+          <p style="line-height: 1.7; margin-bottom: 1rem;">
+            Just as physical mail requires a unique postal address to reach the correct destination, digital devices on a computer network require a logical identifier called an <strong>Internet Protocol (IP) Address</strong> to send and receive packets.
           </p>
-          <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8;">
-            एक एथिकल हैकर के रूप में, आपका पहला काम किसी भी लक्ष्य (Target) के IP एड्रेस की पहचान करना और यह समझना होता है कि वह नेटवर्क में आंतरिक (Internal) है या बाहरी (Public facing)।
+          <p style="line-height: 1.7; margin-bottom: 1.5rem;">
+            As an ethical hacker or security analyst, identifying target IP addresses and determining whether they are internal (private) or external (public) is always one of the very first reconnaissance steps.
           </p>
 
-          <h3 style="font-family: var(--font-heading); color: var(--accent-teal); font-size: 1.3rem; margin: 1.5rem 0 0.8rem 0;">
-            IPv4 vs IPv6: मुख्य अंतर
-          </h3>
-          <ul style="color: var(--text-muted); margin-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8;">
-            <li><strong>IPv4 (32-Bit):</strong> 4 ऑक्टेट्स में विभाजित (उदा. <code>192.168.1.1</code>)। इसमें कुल लगभग 4.3 बिलियन पते संभव हैं, जो दुनिया की बढ़ती आबादी और डिवाइसेज के कारण कम पड़ रहे हैं।</li>
-            <li><strong>IPv6 (128-Bit):</strong> हेक्साडेसिमल प्रारूप में (उदा. <code>2001:0db8:85a3::8a2e:0370:7334</code>)। इसमें अनगिनत (लगभग 340 अनडिसीलियन) पते उपलब्ध हैं।</li>
+          <h3 style="font-size: 1.25rem; margin: 1.5rem 0 0.5rem 0;">IPv4 vs IPv6</h3>
+          <ul style="margin-left: 1.5rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.5rem;">
+            <li><strong>IPv4 (32-bit):</strong> Written as 4 decimal octets separated by dots (e.g. <code>192.168.1.1</code>). It supports approximately 4.29 billion distinct addresses, which is no longer enough for all connected devices worldwide.</li>
+            <li><strong>IPv6 (128-bit):</strong> Written as 8 hexadecimal groups separated by colons (e.g. <code>2001:0db8:85a3::8a2e:0370:7334</code>). It provides an astronomical address space (around 340 undecillion addresses).</li>
           </ul>
 
-          <h3 style="font-family: var(--font-heading); color: var(--accent-amber); font-size: 1.3rem; margin: 1.5rem 0 0.8rem 0;">
-            Public IP बनाम Private IP
-          </h3>
-          <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem;">
-            इंटरनेट पर केवल <strong>Public IP</strong> ही राउट हो सकता है। आपके घर के वाई-फाई राउटर को आपके ISP से एक पब्लिक IP मिलता है, जबकि आपके घर के अंदर के लैपटॉप और फोन को <strong>Private IP</strong> (जैसे <code>192.168.x.x</code> या <code>10.x.x.x</code>) मिलता है, जिसे <strong>NAT (Network Address Translation)</strong> के जरिए बाहर भेजा जाता है।
+          <h3 style="font-size: 1.25rem; margin: 1.5rem 0 0.5rem 0;">Public vs Private IP Addresses</h3>
+          <p style="line-height: 1.7; margin-bottom: 1rem;">
+            Public IP addresses are globally unique and routable across the public internet. Private IP addresses are reserved for internal local area networks (LANs) and cannot be routed across the public internet directly.
           </p>
+          <p style="line-height: 1.7; margin-bottom: 1.5rem;">
+            The standard private IP address ranges defined by RFC 1918 are:
+          </p>
+          <ul style="margin-left: 1.5rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.5rem;">
+            <li><strong>10.0.0.0 – 10.255.255.255</strong> (Class A range)</li>
+            <li><strong>172.16.0.0 – 172.31.255.255</strong> (Class B range)</li>
+            <li><strong>192.168.0.0 – 192.168.255.255</strong> (Class C range, common in home routers)</li>
+          </ul>
         </section>
 
-        <!-- Practical Linux Commands Section with Copy Buttons -->
-        <section class="reveal" style="margin-top: 2.5rem;">
-          <h2 style="font-family: var(--font-heading); color: #fff; font-size: 1.6rem; margin-bottom: 1rem;">
-            2. व्यावहारिक Kali Linux कमांड्स
-          </h2>
-          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
-            अपने सिस्टम का IP एड्रेस, नेटवर्क इंटरफेस और कनेक्टिविटी की जांच करने के लिए ये कमांड्स चलाएं:
+        <!-- Linux Commands Section -->
+        <section class="reveal" style="margin-top: 2rem;">
+          <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">2. Practical Linux Commands</h2>
+          <p style="margin-bottom: 1.25rem;">
+            Open your Linux terminal (or Kali Linux VM) and run these commands to inspect your network configuration:
           </p>
 
           <!-- Command 1 -->
           <div class="code-block">
             <div class="code-header">
-              <span>BASH - नेटवर्क इंटरफेस और IP देखना</span>
+              <span>BASH &mdash; View network interfaces and assigned IP addresses</span>
               <button class="code-copy-btn">Copy</button>
             </div>
             <pre class="code-body"><code>ip -c a</code></pre>
           </div>
-          <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1rem;">
-            * <code>-c</code> फ्लैग कलरफुल आउटपुट देता है ताकि <code>inet</code> (IPv4) आसानी से दिखे।
-          </p>
 
           <!-- Command 2 -->
           <div class="code-block">
             <div class="code-header">
-              <span>BASH - डिफॉल्ट गेटवे (राउटर का IP) जानना</span>
+              <span>BASH &mdash; Check the default gateway (your local router IP)</span>
               <button class="code-copy-btn">Copy</button>
             </div>
             <pre class="code-body"><code>ip route show default</code></pre>
@@ -157,7 +136,7 @@
           <!-- Command 3 -->
           <div class="code-block">
             <div class="code-header">
-              <span>BASH - अपना पब्लिक IP एड्रेस टर्मिनल से चेक करना</span>
+              <span>BASH &mdash; Check your public IP address from the command line</span>
               <button class="code-copy-btn">Copy</button>
             </div>
             <pre class="code-body"><code>curl -s https://api.ipify.org</code></pre>
@@ -166,7 +145,7 @@
           <!-- Command 4 -->
           <div class="code-block">
             <div class="code-header">
-              <span>BASH - कनेक्टिविटी जांचने के लिए 3 पिंग भेजना</span>
+              <span>BASH &mdash; Test connectivity to an external host with 3 ping packets</span>
               <button class="code-copy-btn">Copy</button>
             </div>
             <pre class="code-body"><code>ping -c 3 8.8.8.8</code></pre>
@@ -176,70 +155,67 @@
         <!-- Episode Navigation -->
         <div class="episode-nav reveal">
           <a href="../courses.html" class="btn btn-secondary">
-            &larr; कोर्सेज लिस्ट
+            &larr; All Courses
           </a>
           <a href="ep2.html" class="btn btn-primary">
-            अगला: Ep 02 (OSI Model) &rarr;
+            Next: Ep 02 (OSI Model) &rarr;
           </a>
         </div>
       </article>
 
-      <!-- Sidebar: "सीखा क्या" Checklist (Saved in localStorage) -->
+      <!-- Sidebar: Checklist -->
       <aside>
         <div class="checklist-card reveal" id="episode-checklist" data-episode="ep1">
           <div class="checklist-title">
-            <span style="color: #fff;">सीखा क्या?</span>
-            <span class="progress-counter" id="checklist-count">0/5 Done</span>
+            <span>What You Learned</span>
+            <span class="checklist-counter" id="checklist-count">0/5 Done</span>
           </div>
-          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.2rem;">
-            चेकबॉक्स टिक करें। आपकी प्रगति आपके ब्राउज़र में अपने आप सेव हो जाएगी:
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Check off each topic as you master it. Progress saves automatically in your browser:
           </p>
 
           <ul class="checklist-items">
             <li class="check-item">
               <input type="checkbox" id="chk1_1">
-              <label for="chk1_1">IP Address की बुनियादी अवधारणा समझी</label>
+              <label for="chk1_1">Understand the core purpose of an IP address</label>
             </li>
             <li class="check-item">
               <input type="checkbox" id="chk1_2">
-              <label for="chk1_2">IPv4 (32-bit) और IPv6 (128-bit) का अंतर जाना</label>
+              <label for="chk1_2">Differentiate between IPv4 (32-bit) and IPv6 (128-bit)</label>
             </li>
             <li class="check-item">
               <input type="checkbox" id="chk1_3">
-              <label for="chk1_3">Public बनाम Private IP का कॉन्सेप्ट क्लियर हुआ</label>
+              <label for="chk1_3">Identify standard private IP ranges (RFC 1918)</label>
             </li>
             <li class="check-item">
               <input type="checkbox" id="chk1_4">
-              <label for="chk1_4">टर्मिनल में <code>ip -c a</code> चलाकर IP देखा</label>
+              <label for="chk1_4">Run <code>ip -c a</code> to check your own interface IP</label>
             </li>
             <li class="check-item">
               <input type="checkbox" id="chk1_5">
-              <label for="chk1_5">गेटवे IP और <code>ping</code> कमांड को टेस्ट किया</label>
+              <label for="chk1_5">Test network reachability with <code>ping</code></label>
             </li>
           </ul>
-
-          <div style="background: rgba(255, 176, 32, 0.08); border-left: 3px solid var(--accent-amber); padding: 0.75rem; border-radius: 4px; font-size: 0.8rem; color: var(--text-muted);">
-            💡 <strong>याद रखें:</strong> असली समझ सिर्फ वीडियो देखने से नहीं, खुद कमांड टाइप करने से आती है।
-          </div>
         </div>
       </aside>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-disclaimer">
-        ⚠️ <strong>कानूनी डिस्क्लेमर:</strong> सिर्फ शिक्षा के लिए। प्रैक्टिस सिर्फ अपनी लैब या अनुमति वाले सिस्टम पर करें। किसी भी अनधिकृत गतिविधि के लिए उपयोगकर्ता स्वयं जिम्मेदार होगा।
+        For educational purposes only. Practice only on your own lab or systems you have permission to test.
       </div>
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 <strong>Ethical CodeX</strong>. सर्वाधिकार सुरक्षित।
+          &copy; 2026 Ethical CodeX. All rights reserved.
         </div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="../about.html">नैतिक नीति</a>
-          <a href="../courses.html">कोर्सेज</a>
-          <a href="../links.html">संपर्क</a>
+          <a href="../about.html">About &amp; Ethics</a>
+          <a href="../courses.html">Courses</a>
+          <a href="../links.html">Community</a>
         </div>
       </div>
     </div>
