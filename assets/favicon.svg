@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favShield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5c7" />
+      <stop offset="100%" stop-color="#0a0f1e" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0a0f1e" />
+  <path d="M32 8 L54 18 C54 44 32 58 32 60 C32 58 10 44 10 18 Z" 
+        fill="#070a14" stroke="#00e5c7" stroke-width="2.5"/>
+  <text x="20" y="36" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="900" fill="#00e5c7">&gt;</text>
+  <text x="34" y="36" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="900" fill="#ffb020">_</text>
+  <text x="17" y="49" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#64748b">{</text>
+  <text x="42" y="49" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" fill="#64748b">}</text>
+</svg>

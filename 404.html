@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://www.youtube-nocookie.com;">
+  
+  <title>404: Command Not Found | Ethical CodeX</title>
+  <meta name="description" content="404 Error - पृष्ठ उपलब्ध नहीं है। Terminal command not found.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside class="top-status-bar" aria-label="System Status">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <span class="status-badge" style="color: #ff4757;">
+        <span class="blink-dot" style="background-color: #ff4757; box-shadow: 0 0 10px #ff4757;" aria-hidden="true"></span>
+        ETHICALCODEX :: HTTP_ERROR_404
+      </span>
+      <span style="font-size: 0.72rem; color: var(--text-dim);">STATUS: TARGET_NOT_RESOLVED</span>
+    </div>
+  </aside>
+
+  <header class="navbar" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-link" aria-label="Ethical CodeX Home">
+        <img src="assets/logo.svg" alt="Ethical CodeX Shield Logo" class="brand-logo-img">
+      </a>
+      <a href="index.html" class="nav-cta-btn">&larr; होम पेज पर लौटें</a>
+    </div>
+  </header>
+
+  <main class="container section" style="min-height: 65vh; display: flex; align-items: center; justify-content: center;">
+    <div class="terminal-card reveal active" style="max-width: 650px; width: 100%; border-color: rgba(255, 71, 87, 0.4); box-shadow: 0 0 30px rgba(255, 71, 87, 0.15);">
+      <div class="terminal-header" style="background: #150d18;">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="terminal-title">bash - error 404: route_not_found</div>
+        <div style="font-size: 0.7rem; color: #ff4757;">FATAL_404</div>
+      </div>
+      <div class="terminal-body" style="padding: 2rem;">
+        <div class="term-line">
+          <span class="term-prompt">user@codex:~$</span> <span class="term-command">curl -I https://ethicalcodex.site/requested_page</span>
+        </div>
+        <div class="term-line" style="color: #ff6b81; margin: 0.6rem 0;">
+          HTTP/2 404 Not Found<br>
+          Server: CodexEngine/3.0 (Debian GNU/Linux)<br>
+          Error: bash: page_requested: command or route not found
+        </div>
+        <div class="term-line" style="color: var(--text-dim); margin-bottom: 1.5rem;">
+          [DEBUG] The resource you are trying to ping does not exist or has been shifted into an encrypted vault.
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="index.html" class="btn btn-primary" style="font-size: 0.9rem;">
+            <span>🏠</span> होम पेज पर जाएं
+          </a>
+          <a href="courses.html" class="btn btn-secondary" style="font-size: 0.9rem;">
+            <span>📚</span> कोर्सेज देखें
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-disclaimer">
+        ⚠️ <strong>कानूनी डिस्क्लेमर:</strong> सिर्फ शिक्षा के लिए। प्रैक्टिस सिर्फ अपनी लैब या अनुमति वाले सिस्टम पर करें। किसी भी अनधिकृत गतिविधि के लिए उपयोगकर्ता स्वयं जिम्मेदार होगा।
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>Ethical CodeX</strong>. सर्वाधिकार सुरक्षित।
+        </div>
+        <div>
+          <a href="index.html">होम</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

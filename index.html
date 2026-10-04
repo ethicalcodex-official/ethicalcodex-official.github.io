@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://www.youtube-nocookie.com;">
+  
+  <title>Ethical CodeX | Hinglish में सीखो Ethical Hacking, फ्री</title>
+  <meta name="description" content="Ethical CodeX पर Hinglish में 100% फ्री और प्रैक्टिकल Ethical Hacking, Networking, Linux और Cyber Security सीखें। जीरो से प्रो स्तर तक।">
+  <meta name="keywords" content="Ethical Hacking Hindi, Cyber Security Hinglish, Networking Fundamentals, Kali Linux Hindi, Nmap, Penetration Testing">
+  <meta name="author" content="Ethical CodeX">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ethicalcodex.github.io/">
+  <meta property="og:title" content="Ethical CodeX | Hinglish में सीखो Ethical Hacking">
+  <meta property="og:description" content="प्रैक्टिकल लैब, Linux कमांड्स, और नेटवर्किंग के साथ सीखो एथिकल हैकिंग बिल्कुल फ्री।">
+  <meta property="og:image" content="assets/logo.svg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ethical CodeX | Hinglish Ethical Hacking">
+  <meta name="twitter:description" content="Hinglish में फ्री एथिकल हैकिंग और साइबर सिक्योरिटी की दुनिया।">
+  <meta name="twitter:image" content="assets/logo.svg">
+
+  <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Top Hacker Status Bar -->
+  <aside class="top-status-bar" aria-label="System Status">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <span class="status-badge">
+        <span class="blink-dot" aria-hidden="true"></span>
+        ETHICALCODEX :: SEC_STATUS: ONLINE
+      </span>
+      <span style="font-size: 0.72rem; color: var(--text-dim);">TERMINAL_NODE: v2.4 // LINUX_KALI_COMPLIANT</span>
+    </div>
+  </aside>
+
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-link" aria-label="Ethical CodeX Home">
+        <img src="assets/logo.svg" alt="Ethical CodeX Shield Logo" class="brand-logo-img">
+      </a>
+
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="नेविगेशन मेनू खोलें" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav aria-label="Main Navigation">
+        <ul id="nav-links" class="nav-links">
+          <li><a href="index.html" class="nav-link active">होम</a></li>
+          <li><a href="courses.html" class="nav-link">कोर्सेज</a></li>
+          <li><a href="links.html" class="nav-link">कम्युनिटी लिंक्स</a></li>
+          <li><a href="about.html" class="nav-link">हमारे बारे में</a></li>
+          <li><a href="courses.html" class="nav-cta-btn"><span>⚡</span> फ्री कोर्स</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" aria-label="Hero Section">
+      <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-content">
+        <div class="hero-text reveal">
+          <div class="hero-pill">
+            <span style="color: var(--accent-green);">●</span> 100% Free Cyber Security & Ethical Hacking
+          </div>
+
+          <h1 class="hero-title">
+            <span class="glitch-text">ETHICAL CODEX</span><br>
+            <span id="typewriter-text" style="color: var(--accent-teal);">Hinglish में सीखो Ethical Hacking</span>
+          </h1>
+
+          <p class="hero-tagline">"Hinglish में सीखो Ethical Hacking, फ्री"</p>
+
+          <p class="hero-description">
+            किताबी ज्ञान छोड़ो और असली टर्मिनल पर काम करो। नेटवर्किंग बेसिक्स, लिनक्स कमांड लाइन, पोर्ट स्कैनिंग और वेब सिक्योरिटी को समझो अपनी भाषा में। बिना किसी महंगे कोर्स के, सिर्फ शुद्ध प्रैक्टिकल ज्ञान।
+          </p>
+
+          <div class="hero-actions">
+            <a href="courses.html" class="btn btn-primary">
+              <span>🚀</span> मॉड्यूल 1 शुरू करो
+            </a>
+            <a href="links.html" class="btn btn-secondary">
+              <span>💬</span> कम्युनिटी जॉइन करो
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminal Window Mock -->
+        <div class="terminal-card reveal" aria-label="Live Terminal Simulation">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-title">bash - ethicalcodex@kali:~</div>
+            <div style="font-size: 0.7rem; color: var(--accent-teal);">ROOT_SESSION</div>
+          </div>
+          <div class="terminal-body" id="terminal-content">
+            <!-- Simulated via script.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "क्या सीखोगे" (6 Pillars) -->
+    <section class="section" aria-label="What you will learn">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">CURRICULUM HIGHLIGHTS</span>
+          <h2 class="section-title">क्या सीखोगे Ethical CodeX पर?</h2>
+          <p class="section-subtitle">स्क्रैच से लेकर एडवांस्ड लेवल तक, हर वो कॉन्सेप्ट जो एक वाइट-हैट हैकर और सिक्यूरिटी रिसर्चर को पता होना चाहिए।</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="card-icon">&lt;/&gt;</div>
+            <h3 class="card-title">1. Networking Fundamentals</h3>
+            <p class="card-desc">बिना नेटवर्किंग के हैकिंग नामुमकिन है। IP Adressing, OSI Model, Subnetting, TCP/UDP 3-Way Handshake और पैकेट एनालिसिस को गहराई से समझें।</p>
+            <div class="card-tags">
+              <span class="tech-tag">IPv4/IPv6</span>
+              <span class="tech-tag">Wireshark</span>
+              <span class="tech-tag">TCP/UDP</span>
+              <span class="tech-tag">DNS</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">#_</div>
+            <h3 class="card-title">2. Linux & CLI Mastery</h3>
+            <p class="card-desc">GUI को अलविदा कहें। Kali Linux और Debian टर्मिनल पर फाइल सिस्टम, यूजर परमिशन्स, प्रोसेस मैनेजमेंट और ऑटोमेशन कमांड्स में महारत हासिल करें।</p>
+            <div class="card-tags">
+              <span class="tech-tag">Bash CLI</span>
+              <span class="tech-tag">Kali Linux</span>
+              <span class="tech-tag">File Permissions</span>
+              <span class="tech-tag">SSH</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">⚡</div>
+            <h3 class="card-title">3. Recon & Scanning</h3>
+            <p class="card-desc">टारगेट को जाने बिना हमला संभव नहीं। Nmap, OSINT टूल्स और पोर्ट स्कैनिंग की मदद से सिस्टम में खुले दरवाजे और कमजोर सर्विस खोजना सीखें।</p>
+            <div class="card-tags">
+              <span class="tech-tag">Nmap</span>
+              <span class="tech-tag">Passive OSINT</span>
+              <span class="tech-tag">Banner Grabbing</span>
+              <span class="tech-tag">Netcat</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">{ }</div>
+            <h3 class="card-title">4. Web Application Security</h3>
+            <p class="card-desc">वेबसाइटें कैसे हैक होती हैं और उन्हें कैसे सुरक्षित किया जाता है? OWASP Top 10 वल्नेरेबिलिटीज जैसे SQLi, XSS, IDOR और CSRF का हैंड्स-ऑन विश्लेषण।</p>
+            <div class="card-tags">
+              <span class="tech-tag">OWASP Top 10</span>
+              <span class="tech-tag">Burp Suite</span>
+              <span class="tech-tag">SQLi & XSS</span>
+              <span class="tech-tag">Bounty Basics</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">🔒</div>
+            <h3 class="card-title">5. Cryptography & Hashing</h3>
+            <p class="card-desc">डेटा एन्क्रिप्शन, हैश अल्गोरिदम (MD5, SHA-256), सिमेट्रिक और असिमेट्रिक क्रिप्टोग्राफी, स्टेग्नोग्राफी और SSL/TLS का सटीक वर्किंग मॉडल।</p>
+            <div class="card-tags">
+              <span class="tech-tag">Hashing</span>
+              <span class="tech-tag">Stego</span>
+              <span class="tech-tag">Public/Private Keys</span>
+              <span class="tech-tag">Ciphers</span>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-icon">🛡️</div>
+            <h3 class="card-title">6. Blue Team Defense</h3>
+            <p class="card-desc">असली हैकर सिर्फ तोड़ना नहीं, सिस्टम को सुरक्षित करना जानता है। लॉग एनालिसिस, फायरवॉल रूल्स, SOC बेसिक्स और सिस्टम हार्डनिंग टेक्निक्स।</p>
+            <div class="card-tags">
+              <span class="tech-tag">Log Analysis</span>
+              <span class="tech-tag">Firewalls</span>
+              <span class="tech-tag">Incident Response</span>
+              <span class="tech-tag">Hardening</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Timeline (9 Modules) -->
+    <section class="section" style="background: rgba(8, 12, 24, 0.6);" aria-label="Learning Roadmap">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">COMPLETE CURRICULUM</span>
+          <h2 class="section-title">सीखने का रोडमैप (9 Modules)</h2>
+          <p class="section-subtitle">इस क्रम में पढ़ाई करें ताकि हर कॉन्सेप्ट पिछले ज्ञान से मजबूत जुड़े।</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Module 1 -->
+          <div class="timeline-item unlocked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-active">MODULE 1 • उपलब्ध है (EP 1 - 5)</span>
+              <h3 style="color: #fff; font-size: 1.2rem; margin: 0.3rem 0;">Networking Fundamentals for Hackers</h3>
+              <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 0.8rem;">
+                IP addresses, Subnetting, OSI 7 Layers, TCP/UDP Handshake, DNS resolution, और Common Port Scanning.
+              </p>
+              <a href="courses.html" style="font-family: var(--font-code); font-size: 0.85rem; font-weight: 700; color: var(--accent-green);">
+                एपिसोड्स देखें &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="timeline-item locked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-locked">MODULE 2 • COMING SOON 🔒</span>
+              <h3 style="color: #e2e8f0; font-size: 1.15rem; margin: 0.3rem 0;">Linux CLI & Kali Environment Setup</h3>
+              <p style="color: var(--text-dim); font-size: 0.92rem;">
+                लिनक्स कमांड्स, फाइल सिस्टम, Bash स्क्रिप्टिंग और सुरक्षित वर्चुअल लैब (VirtualBox/VMware) कॉन्फिगरेशन।
+              </p>
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="timeline-item locked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-locked">MODULE 3 • COMING SOON 🔒</span>
+              <h3 style="color: #e2e8f0; font-size: 1.15rem; margin: 0.3rem 0;">Passive & Active Reconnaissance</h3>
+              <p style="color: var(--text-dim); font-size: 0.92rem;">
+                Google Dorking, Shodan, WHOIS, Subdomain Hunting, और Nmap Advanced Flags।
+              </p>
+            </div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="timeline-item locked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-locked">MODULE 4 • COMING SOON 🔒</span>
+              <h3 style="color: #e2e8f0; font-size: 1.15rem; margin: 0.3rem 0;">Web Application Vulnerabilities (OWASP Top 10)</h3>
+              <p style="color: var(--text-dim); font-size: 0.92rem;">
+                Burp Suite प्रॉक्सी सेटअप, SQL Injection, Cross-Site Scripting (XSS), CSRF, और IDOR बग्स।
+              </p>
+            </div>
+          </div>
+
+          <!-- Module 5 -->
+          <div class="timeline-item locked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-locked">MODULE 5 • COMING SOON 🔒</span>
+              <h3 style="color: #e2e8f0; font-size: 1.15rem; margin: 0.3rem 0;">Network Penetration & Sniffing</h3>
+              <p style="color: var(--text-dim); font-size: 0.92rem;">
+                ARP Spoofing, MITM कॉन्सेप्ट्स, Wireshark से लाइव पैकेट डंप और वाई-फाई प्रोटोकॉल (WPA2/WPA3) सुरक्षा।
+              </p>
+            </div>
+          </div>
+
+          <!-- Module 6 -->
+          <div class="timeline-item locked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-locked">MODULE 6 • COMING SOON 🔒</span>
+              <h3 style="color: #e2e8f0; font-size: 1.15rem; margin: 0.3rem 0;">System Hacking & Privilege Escalation</h3>
+              <p style="color: var(--text-dim); font-size: 0.92rem;">
+                Linux/Windows प्रिविलेज एस्केलेशन बेसिक्स, मिसकॉन्फिगरेशन एक्सप्लॉयटेशन और SUID बिट्स।
+              </p>
+            </div>
+          </div>
+
+          <!-- Module 7 -->
+          <div class="timeline-item locked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-locked">MODULE 7 • COMING SOON 🔒</span>
+              <h3 style="color: #e2e8f0; font-size: 1.15rem; margin: 0.3rem 0;">Python & Bash for Ethical Hackers</h3>
+              <p style="color: var(--text-dim); font-size: 0.92rem;">
+                कस्टम पोर्ट स्कैनर, बैनर ग्रैबर और ऑटोमेटेड रिकॉन स्क्रिप्ट्स खुद बनाना सीखें।
+              </p>
+            </div>
+          </div>
+
+          <!-- Module 8 -->
+          <div class="timeline-item locked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-locked">MODULE 8 • COMING SOON 🔒</span>
+              <h3 style="color: #e2e8f0; font-size: 1.15rem; margin: 0.3rem 0;">Blue Team Defense & Threat Analysis</h3>
+              <p style="color: var(--text-dim); font-size: 0.92rem;">
+                SOC बेसिक्स, SIEM टूल्स, इंट्रूजन डिटेक्शन (IDS/IPS) और सिस्टम लॉग्स की जांच।
+              </p>
+            </div>
+          </div>
+
+          <!-- Module 9 -->
+          <div class="timeline-item locked reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-content">
+              <span class="module-badge badge-capstone">MODULE 9 • CAPSTONE PROJECT 🏆</span>
+              <h3 style="color: #e2e8f0; font-size: 1.15rem; margin: 0.3rem 0;">CTF Capstone Lab & Real-World Challenge</h3>
+              <p style="color: var(--text-dim); font-size: 0.92rem;">
+                एक पूरी कस्टम वल्नरेबल मशीन को हैक करना, फ्लैग्स ढूँढना और प्रोफेशनल पेनेट्रेशन टेस्टिंग रिपोर्ट लिखना।
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Counter Section (Customizable Placeholders) -->
+    <section class="stats-section" aria-label="Community Statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-box reveal">
+            <!-- EDITABLE: data-target को अपने सब्सक्राइबर काउंट से बदलें -->
+            <div class="stat-number" data-target="50000" data-suffix="+">0</div>
+            <div class="stat-label">यूट्यूब सब्सक्राइबर्स</div>
+          </div>
+          <div class="stat-box reveal">
+            <!-- EDITABLE: data-target को अपने वीडियो काउंट से बदलें -->
+            <div class="stat-number" data-target="120" data-suffix="+">0</div>
+            <div class="stat-label">प्रैक्टिकल वीडियोज</div>
+          </div>
+          <div class="stat-box reveal">
+            <!-- EDITABLE: data-target को अपने वॉच आवर्स से बदलें -->
+            <div class="stat-number" data-target="350" data-suffix="+ hrs">0</div>
+            <div class="stat-label">फ्री लर्निंग कंटेंट</div>
+          </div>
+          <div class="stat-box reveal">
+            <!-- EDITABLE: data-target को अपने कम्युनिटी काउंट से बदलें -->
+            <div class="stat-number" data-target="15000" data-suffix="+">0</div>
+            <div class="stat-label">सक्रिय कम्युनिटी मेंबर्स</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Course CTA Banner -->
+    <section class="section" aria-label="Course Call to Action">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <span class="section-tag" style="background: rgba(0, 229, 199, 0.15);">START TODAY</span>
+          <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin: 1rem 0; color: #fff;">
+            Module 1: Networking Fundamentals लाइव है!
+          </h2>
+          <p style="max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-muted); font-size: 1.05rem;">
+            IP Address, OSI Model, TCP/UDP, DNS और Ports के 5 पूरे प्रैक्टिकल एपिसोड्स उपलब्ध हैं। साथ में कॉपी-रेडी Linux कमांड्स और सेल्फ-असेसमेंट चेकलिस्ट।
+          </p>
+          <a href="courses.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 0.9rem 2.2rem;">
+            <span>🚀</span> सभी 5 एपिसोड्स अनलॉक करें
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community & Socials Section -->
+    <section class="section" style="background: rgba(6, 9, 18, 0.7);" aria-label="Social Community Links">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">COMMUNITY HUBS</span>
+          <h2 class="section-title">हमसे जुड़ें और सवाल पूछें</h2>
+          <p class="section-subtitle">हैकर्स अकेले नहीं, कम्युनिटी के साथ तेजी से सीखते हैं।</p>
+        </div>
+
+        <div class="community-grid">
+          <a href="https://youtube.com/@ethicalcode_x" target="_blank" rel="noopener noreferrer" class="social-card yt reveal">
+            <div class="social-icon-box" style="color: #ff4757;">▶</div>
+            <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;">YouTube</h3>
+            <p style="color: var(--text-dim); font-size: 0.88rem; font-family: var(--font-code); margin-bottom: 0.8rem;">@ethicalcode_x</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">हर हफ्ते नए Hinglish प्रैक्टिकल ट्यूटोरियल्स और लाइव CTF वॉकथ्रू।</p>
+          </a>
+
+          <a href="https://t.me/ethicalcode_x" target="_blank" rel="noopener noreferrer" class="social-card tg reveal">
+            <div class="social-icon-box" style="color: #0088cc;">✈</div>
+            <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;">Telegram</h3>
+            <p style="color: var(--text-dim); font-size: 0.88rem; font-family: var(--font-code); margin-bottom: 0.8rem;">t.me/ethicalcode_x</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">क्लास नोट्स, चीटशीट PDF, तुरंत अपडेट्स और कम्युनिटी डिस्कशन ग्रुप।</p>
+          </a>
+
+          <a href="https://instagram.com/official_ethicalcodex" target="_blank" rel="noopener noreferrer" class="social-card ig reveal">
+            <div class="social-icon-box" style="color: #e1306c;">📷</div>
+            <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.4rem;">Instagram</h3>
+            <p style="color: var(--text-dim); font-size: 0.88rem; font-family: var(--font-code); margin-bottom: 0.8rem;">@official_ethicalcodex</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">60-सेकंड क्विक टिप्स, Linux चीटशीट्स, साइबर न्यूज और रील्स।</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section (Accordion) -->
+    <section class="section" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">अक्सर पूछे जाने वाले सवाल</h2>
+          <p class="section-subtitle">कोर्स, सुरक्षा और सीखने की शुरुआत से जुड़े महत्वपूर्ण प्रश्न</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>क्या यह कोर्स सच में 100% फ्री है?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              हाँ! Ethical CodeX का प्राथमिक उद्देश्य भारत और हिंदी भाषी छात्रों को विश्वस्तरीय साइबर सिक्योरिटी शिक्षा बिना किसी वित्तीय बाधा के पहुँचाना है। सारे मुख्य यूट्यूब लेक्चर्स, नोट्स और कमांड चीटशीट्स पूरी तरह फ्री हैं।
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>सीखने के लिए मुझे किस तरह के लैपटॉप या कंप्यूटर की जरूरत है?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              शुरुआत के लिए 4GB या 8GB RAM वाला कोई भी साधारण Windows, Mac या Linux लैपटॉप काफी है। आप VirtualBox या VMware में Kali Linux मुफ्त में इंस्टॉल कर सकते हैं। भारी हार्डवेयर की आवश्यकता नहीं है।
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>क्या कोडिंग पहले से आना जरूरी है?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              नहीं, बिल्कुल जरूरी नहीं है! हम नेटवर्किंग और बेसिक टर्मिनल कमांड्स से शुरू करते हैं। जब कोडिंग (Python/Bash) की जरूरत होगी, तब हम उसे भी बुनियादी स्तर से सिखाएंगे।
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>क्या मैं बिना इजाजत किसी वाई-फाई या वेबसाइट को टेस्ट कर सकता हूँ?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <strong>कदापि नहीं!</strong> बिना लिखित अनुमति के किसी भी नेटवर्क या सिस्टम पर स्कैनिंग या टेस्टिंग करना कानूनन अपराध (IT Act के तहत) है। जो कुछ भी आप यहाँ सीखते हैं, उसकी प्रैक्टिस केवल अपनी वर्चुअल लैब (localhost) या अनुमति प्राप्त बग बाउंटी प्रोग्राम्स में ही करें।
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question" aria-expanded="false">
+              <span>CTF और सर्टिफिकेशन्स (CEH, OSCP, CompTIA Security+) में यह कैसे मदद करेगा?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              हमारा पाठ्यक्रम इंडस्ट्री स्टैंडर्ड फ्रेमवर्क्स के अनुरूप तैयार किया गया है। यहाँ सीखे गए नेटवर्किंग, लिनक्स और पेनेट्रेशन टेस्टिंग के व्यावहारिक फंडामेंटल्स आपको CompTIA Network+, Security+, और OSCP जैसी परीक्षाओं को समझने में मजबूत आधार प्रदान करते हैं।
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-disclaimer">
+        ⚠️ <strong>कानूनी डिस्क्लेमर:</strong> सिर्फ शिक्षा के लिए। प्रैक्टिस सिर्फ अपनी लैब या अनुमति वाले सिस्टम पर करें। किसी भी अनधिकृत गतिविधि के लिए उपयोगकर्ता स्वयं जिम्मेदार होगा।
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>Ethical CodeX</strong>. सर्वाधिकार सुरक्षित।
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="about.html">नैतिक नीति</a>
+          <a href="courses.html">कोर्सेज</a>
+          <a href="links.html">संपर्क</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

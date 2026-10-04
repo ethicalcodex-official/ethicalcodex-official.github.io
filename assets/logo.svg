@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5c7" />
+      <stop offset="50%" stop-color="#0984e3" />
+      <stop offset="100%" stop-color="#0a0f1e" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5c7" />
+      <stop offset="100%" stop-color="#00ff88" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Shield Icon Group -->
+  <g transform="translate(10, 8)">
+    <!-- Outer Shield Glow -->
+    <path d="M32 4 L56 14 C56 42 32 58 32 60 C32 58 8 42 8 14 Z" 
+          fill="#0a0f1e" stroke="url(#shieldGrad)" stroke-width="2.5" filter="url(#glow)"/>
+    
+    <!-- Inner Cyber Grid / Shield Accent -->
+    <path d="M32 10 L50 18 C50 39 32 52 32 53 C32 52 14 39 14 18 Z" 
+          fill="none" stroke="#00e5c7" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="2 2" />
+
+    <!-- Terminal Prompt & Brackets inside Shield -->
+    <text x="21" y="32" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="900" fill="#00e5c7">&gt;</text>
+    <text x="32" y="32" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="900" fill="#ffb020">_</text>
+    <text x="17" y="46" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#94a3b8">{</text>
+    <text x="39" y="46" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#94a3b8">}</text>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(82, 50)">
+    <!-- Main text "ETHICAL" -->
+    <text x="0" y="0" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="32" font-weight="800" letter-spacing="2" fill="url(#textGrad)">ETHICAL</text>
+    <!-- Accent text "CODEX" -->
+    <text x="145" y="0" font-family="'Space Grotesk', -apple-system, sans-serif" font-size="32" font-weight="900" letter-spacing="3" fill="url(#accentGrad)" filter="url(#glow)">CODEX</text>
+    <!-- Sub-badge / Terminal style subtext -->
+    <text x="270" y="-12" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#ffb020" letter-spacing="1">ROOT::SEC</text>
+  </g>
+</svg>
